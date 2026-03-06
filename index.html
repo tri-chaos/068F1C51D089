@@ -78,12 +78,12 @@
             opacity: 0;
             visibility: hidden;
             pointer-events: none;
-            transition: opacity 0.8s ease, visibility 1.2s step-end;
+            transition: opacity 1.8s ease, visibility 2.2s step-end;
         }
         body.night-stage-1 #night-curtain {
             opacity: 1;
             visibility: visible;
-            transition: opacity 0.8s ease, visibility 0s step-start;
+            transition: opacity 2.2s ease, visibility 0s step-start;
         }
         body.night-stage-2 #night-curtain {
             opacity: 0;
@@ -96,7 +96,7 @@
             width: 100vw; height: 100vh;
             will-change: transform;
             transform-origin: center center;
-            transition: transform 0.57s cubic-bezier(0.2, 0.8, 0.2, 1);
+            transition: transform 2.2s cubic-bezier(0.2, 0.8, 0.2, 1);
             z-index: 10;
             backface-visibility: hidden;
             transform: translate3d(0, 0, 0);
@@ -109,7 +109,7 @@
             display: flex; align-items: center; justify-content: center; 
             box-shadow: 28px 28px 49px -36.5px rgba(15, 23, 32, 0.9), inset 2px 2px 1px 2px rgba(255, 255, 255, 30), inset 0.3px -0.3px 2.8px 5px rgba(255, 255, 255, 20);
             pointer-events: auto;
-            transition: background-color 1.2s ease;
+            transition: background-color 2.2s ease;
             will-change: transform;
             transform: translate3d(0, 0, 0);
             -webkit-backface-visibility: hidden;
@@ -136,7 +136,7 @@
             border-radius: 50%;
             background: rgba(0, 0, 0, 0.4);
             opacity: 0;
-            transition: opacity 0.8s ease;
+            transition: opacity 2.2s ease;
             z-index: 5;
             pointer-events: none;
             overflow: hidden;
@@ -155,12 +155,12 @@
         
         .tri-body {
             filter: brightness(1.0) saturate(1.6);
-            transition: filter 0.8s ease-in-out;
+            transition: filter 1.8s ease-in-out;
             will-change: transform, filter;
         }
         body.night-stage-2 .tri-body {
             filter: brightness(0.95) saturate(1.28) contrast(0.98) drop-shadow(1px 1px 8px rgba(209, 228, 63, 0.5));
-            transition: filter 0.8s ease-out;
+            transition: filter 1.8s ease-out;
             will-change: transform, filter;
         }
 
@@ -173,7 +173,7 @@
         }
 
         .layer-hour, .layer-chaos, .layer-tri-needle { 
-            transition: filter 0.8s ease; 
+            transition: filter 1.8s ease; 
             will-change: filter;
         }
         
@@ -354,7 +354,7 @@
                 </svg>
                 <svg class="overlay-svg" viewBox="0 0 400 400">
                     <g opacity="0.60">
-                        <rect x="42" y="42" width="316" height="316" fill="none" stroke="#1BF007" stroke-width="1.4"/>
+                        <rect x="42" y="42" width="316" height="316" fill="none" stroke="#1BF007" stroke-width="1.35"/>
                         <path d="M194 32h12L200 42z M194 368h12L200 358z M32 194v12L42 200z M368 194v12L358 200z" fill="#E60865"/>
                     </g>
                 </svg>
@@ -419,7 +419,7 @@
             // 3. 次の描画フレームで「着地」のアニメーションを開始させる
             // これにより、tri-body の計算破綻を防ぎつつ滑らかに戻ります
             requestAnimationFrame(() => {
-                NODES.app.style.transition = 'transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1)';
+                NODES.app.style.transition = 'transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1)';
                 updateTransform();
             });
         }
@@ -428,7 +428,7 @@
             if (!STATE.isFollowing) {
                 STATE.isFollowing = true;
                 document.body.classList.add('is-following');
-                NODES.app.style.transition = 'transform 0.68s cubic-bezier(0.2, 0.8, 0.2, 1)';
+                NODES.app.style.transition = 'transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1)';
                 if (!document.fullscreenElement) {
                     document.documentElement.requestFullscreen().catch(() => {});
                 }
